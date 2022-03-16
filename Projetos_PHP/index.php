@@ -29,28 +29,28 @@ session_start();
             echo "<a href='sair'>Sair</a><br>";
         }else{
             ?>    
-
-            <div class="container" id="loginModal" tabindex="-1">
-                <div class="container-content">
-                    <div class="container-body">
-                        <form id="login-usuario-form">
-                            <span id="msgAlertErroLogin"></span>
-                            <div class="mb-3">
-                                <label for="email" class="col-form-label">Usuário:</label>
-                                <input type="text" name="email" class="form-control" id="email" placeholder="Digite o usuário">
-                            </div>
-                            <div class="mb-3">
-                                <label for="senha" class="col-form-label">Senha:</label>
-                                <input type="password" name="senha" class="form-control" id="senha" autocomplete="on" placeholder="Digite a senha">
-                            </div>
-                            <div class="mb-3">
-                                <input type="submit" class="btn btn-outline-primary bt-sm" id="login-usuario-btn" value="Acessar">
-                            </div>
-                        </form>
+            <div id='dados-usuario'>
+                <div class="container" id="loginModal" tabindex="-1">
+                    <div class="container-content">
+                        <div class="container-body">
+                            <form id="login-usuario-form">
+                                <span id="msgAlertErroLogin"></span>
+                                <div class="mb-3">
+                                    <label for="email" class="col-form-label">Usuário:</label>
+                                    <input type="text" name="email" class="form-control" id="email" placeholder="Digite o usuário">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="senha" class="col-form-label">Senha:</label>
+                                    <input type="password" name="senha" class="form-control" id="senha" autocomplete="on" placeholder="Digite a senha">
+                                </div>
+                                <div class="mb-3">
+                                    <input type="submit" class="btn btn-outline-primary bt-sm" id="login-usuario-btn" value="Acessar">
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
-            
                 
             <?php
         }
