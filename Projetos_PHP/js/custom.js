@@ -1,7 +1,9 @@
 const loginForm = document.getElementById("login-usuario-form");
 const msgAlert = document.getElementById("msgAlert");
 const msgAlertErroLogin = document.getElementById("msgAlertErroLogin");
-const loginModal = new bootstrap.Container(document.getElementById("loginModal"));
+const loginModal = new document.getElementById("loginModal");
+
+//const loginModal = new bootstrap.Modal(document.getElementById("loginModal"));
 
 loginForm.addEventListener("submit", async (e) => {
     e.preventDefault();
