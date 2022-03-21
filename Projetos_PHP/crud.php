@@ -1,3 +1,10 @@
+<?php
+	session_start();
+
+	if(!isset($_SESSION['id'], $_SESSION['nome'])){
+		header("Location: index.php");
+	} else {
+		?>
 
 
 <!DOCTYPE html>
@@ -273,11 +280,11 @@ $(document).ready(function(){
 			<div class="table-title">
 				<div class="row">
 					<div class="col-sm-6">
-						<h2>Sistema de Busca</h2>
+						<h2>Gerenciar <b>Alunos</b></h2>
 					</div>
 					<div class="col-sm-6">
-						<a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add Novo Aluno </span></a>
-						<a href="#deleteEmployeeModal" class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xE15C;</i> <span>Deletar</span></a>						
+						<a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add novo</span></a>
+						<a href="#deleteEmployeeModal" class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xE15C;</i> <span>Delete</span></a>						
 					</div>
 				</div>
 			</div>
@@ -308,8 +315,7 @@ $(document).ready(function(){
 						<td>Thomas Hardy</td>
 						<td>thomashardy@mail.com</td>
 						<td>89 Chiaroscuro Rd, Portland, USA</td>
-						<td>Escola Dev</td>
-                        <td>Manha</td>
+						<td>(171) 555-2222</td>
 						<td>
 							<a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
 							<a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
@@ -325,8 +331,7 @@ $(document).ready(function(){
 						<td>Dominique Perrier</td>
 						<td>dominiqueperrier@mail.com</td>
 						<td>Obere Str. 57, Berlin, Germany</td>
-						<td>Escola Dev</td>
-                        <td>Manha</td>
+						<td>(313) 555-5735</td>
 						<td>
 							<a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
 							<a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
@@ -342,8 +347,7 @@ $(document).ready(function(){
 						<td>Maria Anders</td>
 						<td>mariaanders@mail.com</td>
 						<td>25, rue Lauriston, Paris, France</td>
-						<td>Escola Dev</td>
-                        <td>Manha</td>
+						<td>(503) 555-9931</td>
 						<td>
 							<a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
 							<a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
@@ -359,8 +363,7 @@ $(document).ready(function(){
 						<td>Fran Wilson</td>
 						<td>franwilson@mail.com</td>
 						<td>C/ Araquil, 67, Madrid, Spain</td>
-						<td>Escola Dev</td>
-                        <td>Manha</td>
+						<td>(204) 619-5731</td>
 						<td>
 							<a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
 							<a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
@@ -376,8 +379,7 @@ $(document).ready(function(){
 						<td>Martin Blank</td>
 						<td>martinblank@mail.com</td>
 						<td>Via Monte Bianco 34, Turin, Italy</td>
-						<td>Escola Dev</td>
-                        <td>Manha</td>
+						<td>(480) 631-2097</td>
 						<td>
 							<a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
 							<a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
@@ -388,10 +390,10 @@ $(document).ready(function(){
 			<div class="clearfix">
 				<div class="hint-text">Mostar <b>5</b> de <b>25</b> entradas</div>
 				<ul class="pagination">
-					<li class="page-item"><a href="#">Previous</a></li>
+					<li class="page-item disabled"><a href="#">Previous</a></li>
 					<li class="page-item"><a href="#" class="page-link">1</a></li>
 					<li class="page-item"><a href="#" class="page-link">2</a></li>
-					<li class="page-item"><a href="#" class="page-link">3</a></li>
+					<li class="page-item active"><a href="#" class="page-link">3</a></li>
 					<li class="page-item"><a href="#" class="page-link">4</a></li>
 					<li class="page-item"><a href="#" class="page-link">5</a></li>
 					<li class="page-item"><a href="#" class="page-link">Next</a></li>
@@ -501,3 +503,6 @@ $(document).ready(function(){
 </div>
 </body>
 </html>
+<?php
+	}
+?>
