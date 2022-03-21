@@ -1,9 +1,10 @@
 const loginForm = document.getElementById("login-usuario-form");
+const cadForm = document.getElementById("cad-usuario-form");
 const msgAlert = document.getElementById("msgAlert");
 const msgAlertErroLogin = document.getElementById("msgAlertErroLogin");
-const loginModal = new document.getElementById("loginModal");
-
-//const loginModal = new bootstrap.Modal(document.getElementById("loginModal"));
+const msgAlertErroCad = document.getElementById("msgAlertErroCad");
+const loginModal = new bootstrap.Modal(document.getElementById("loginModal"));
+const cadModal = new bootstrap.Modal(document.getElementById("cadUsuarioModal"));
 
 loginForm.addEventListener("submit", async (e) => {
     e.preventDefault();
@@ -25,18 +26,32 @@ loginForm.addEventListener("submit", async (e) => {
         if(resposta['erro']){
             msgAlertErroLogin.innerHTML = resposta['msg']
         }else{
-            document.getElementById("dados-usuario").innerHTML = "Bem vindo " + resposta['dados'].nome + "<br><a href='sair.php'>Sair</a><br>";
-            loginForm.reset();
-            loginModal.hide();
-            
-        }
-        if(resposta['erro']){
-            msgAlertErroLogin.innerHTML = resposta['msg']
-        }else{
-            document.getElementById("dados-usuario").innerHTML = "Bem vindo " + resposta['dados'].nome 
-            windowns.location.href = "crud.php";
-            loginForm.reset();
-            loginModal.hide();
+            document.getElementById("dados-usuario").innerHTML = "Bem vindo " + resposta['dados'].nome + "<br><a href='crud.php'>CRUD</a><br><a href='sair.php'>Sair</a>";
+            cadModal.hide();
+            cadForm.reset();
         }
     }
+});
+
+cadForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const dadosForm = new FormData(cadForm);
+
+    const dados = await fetch("cadastrar.php", {
+        method: "POST",
+        body: dadosForm 
+    });
+
+    const resposta = await dados.json();
+
+    //console.log(resposta);
+
+    if(resposta['erro']){
+        msgAlertErroCad.innerHTML = resposta['msg'];
+    }else{
+        msgAlert.innerHTML = resposta['msg'];
+        cadForm.reset();
+        cadModal.hide();
+    }   
 });
