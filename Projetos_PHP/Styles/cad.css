@@ -1,0 +1,71 @@
+body {
+    font-family: 'Prompt', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.Corpo_Itens {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Supra_Body {
+    background-color: #FFFFFF;
+
+    min-height: 70vh;
+  
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+}
+
+.Campo_Cadastro {
+    display: flex;
+    flex-direction: column;
+    
+    align-items: start;
+    justify-content: center;
+
+    border-radius: 20px;
+    background-color: #04A486;
+    color: white;
+    
+    min-width: 350px;
+    padding: 0px;
+    padding-left: 40px;
+}
+
+.Campo_Cadastro .Campo_Input {
+    border: 2px solid rgba(145, 143, 143, 0.774);
+    border-radius: 7px;
+    width: 300px;
+    height: 25px;
+}
+
+.Campo_Cadastro button {
+    font-size: 14px;
+    font-weight: 500;
+    color:#04A486;
+    display: flex;
+    align-items: center;
+    border: 2px solid rgba(145, 143, 143, 0.774);
+    border-radius: 7px;
+    
+    cursor: pointer;
+}
+
+.Campo_Cadastro button img{
+    margin-left: 20px;
+}
+.Campo_Cadastro .btn {
+    display: flex;
+    justify-content: flex-end;
+    text-align: center;
+
+    padding-top: 20px;
+    padding-bottom: 15px;
+}

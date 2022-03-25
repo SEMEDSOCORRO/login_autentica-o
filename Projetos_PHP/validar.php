@@ -5,7 +5,7 @@ include_once "conexao.php";
 $dados = filter_input_array(INPUT_POST, FILTER_DEFAULT);
 
 /*$dados = [
-    "email" => "sergiorssantana@hotmail.com",
+    "email" => "cesar@celke.com.br",
     "senha" => "123456"
 ];*/
 
